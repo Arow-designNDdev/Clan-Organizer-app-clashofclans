@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clan Organizer</title>
+<link rel="icon" href="assets/logo-crown.png">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="motion.css">
+<link rel="stylesheet" href="status.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/home"><img src="assets/logo-crown.png" alt=""><span>Clan Organizer</span></a>
+  <nav id="nav"></nav>
+</header>
+<div id="subbar"></div>
+<main id="view"></main>
+<footer id="foot"></footer>
+<div id="toast" role="status"></div>
+
+<dialog id="plDlg" class="xl"><div id="plBody"></div></dialog>
+<dialog id="addDlg"><div class="dh">Add a clan<button class="btn ghost" data-close>Close</button></div><div class="db">
+  <label class="fld">Clan tag<input type="text" id="addTag" placeholder="#2PP0RQ8L" autocomplete="off"></label>
+  <button class="btn gold" id="addGo">Add and sync</button><div class="err" id="addErr"></div></div></dialog>
+
+<dialog id="jdDlg"><div class="dh">Join dates<button class="btn ghost" data-close>Close</button></div><div class="db">
+  <p class="note" style="margin-top:0">The game does not tell us when someone joined your clan. Fill in the real date for anyone the app has wrong or marked unknown, then save. Prestige counts days from these dates.</p>
+  <div class="scroll" style="max-height:56vh;overflow:auto"><table class="tb" id="jdTable"></table></div>
+  <div class="row-btns"><button class="btn gold" id="jdSave">Save dates</button></div></div></dialog>
+
+<dialog id="rDlg"><div class="dh">Export roster image<button class="btn ghost" data-close>Close</button></div><div class="db">
+  <div class="fields">
+    <label class="fld">Title<input type="text" id="rTitle"></label>
+    <label class="fld">Subtitle<input type="text" id="rSub"></label>
+    <label class="fld">Footer<input type="text" id="rFoot"></label>
+    <label class="fld">Order<select id="rOrder"></select></label>
+    <label class="fld">Columns<select id="rCols"><option value="1">1 column</option><option value="2">2 columns</option></select></label>
+    <label class="fld">Background image (optional)<input type="file" id="rBg" accept="image/*"></label>
+  </div>
+  <div class="chk"><label><input type="checkbox" id="rScores" checked> Scores</label><label><input type="checkbox" id="rLeague" checked> League icons</label><label><input type="checkbox" id="rTags"> Player tags</label></div>
+  <canvas id="rCanvas" class="pv"></canvas>
+  <div class="row-btns"><button class="btn gold" id="rSave">Download PNG</button><button class="btn" id="rCopy">Copy image</button></div>
+</div></dialog>
+
+<dialog id="lDlg"><div class="dh">Export leaderboard image<button class="btn ghost" data-close>Close</button></div><div class="db">
+  <div class="fields">
+    <label class="fld">Title<input type="text" id="lTitle"></label>
+    <label class="fld">Script line<input type="text" id="lSub"></label>
+    <label class="fld">Footer<input type="text" id="lFoot"></label>
+    <label class="fld">Rank by<select id="lRank"></select></label>
+    <label class="fld">Rows<select id="lRows"><option>5</option><option selected>10</option><option>15</option><option>20</option><option>30</option></select></label>
+    <label class="fld">Colour<span class="colors" id="lColors"></span></label>
+  </div>
+  <div class="chk" id="lCols"></div>
+  <canvas id="lCanvas" class="pv"></canvas>
+  <div class="row-btns"><button class="btn gold" id="lSave">Download PNG</button><button class="btn" id="lCopy">Copy image</button></div>
+</div></dialog>
+
+<script src="core.js"></script>
+<script src="motion.js"></script>
+<script src="exports.js"></script>
+<script src="charts.js"></script>
+<script src="pages.js"></script>
+<script src="pages2.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

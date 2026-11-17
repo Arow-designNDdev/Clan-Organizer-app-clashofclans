@@ -1,0 +1,7 @@
+config.json
+.env
+data/
+__pycache__/
+dist/
+build/
+installer/

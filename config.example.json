@@ -1,0 +1,7 @@
+{
+  "api_key": "PASTE_YOUR_CLASH_OF_CLANS_API_KEY",
+  "clan_tag": "#YOURCLANTAG",
+  "base_url": "https://cocproxy.royaleapi.dev/v1",
+  "sync_minutes": 60,
+  "games_max": 4000
+}

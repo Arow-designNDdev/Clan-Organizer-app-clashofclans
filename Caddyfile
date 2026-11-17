@@ -1,0 +1,6 @@
+# With DOMAIN set in .env (for example clans.example.com) Caddy gets an HTTPS certificate by itself.
+# Without it, the site is served on plain http://YOUR_SERVER_IP
+{$DOMAIN::80} {
+	encode gzip
+	reverse_proxy app:5000
+}

@@ -1,0 +1,16 @@
+# Optional: builds ClanOrganizer-Setup.exe on GitHub's free Windows machines, so you need nothing installed.
+name: Build installer
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m pip install -r requirements.txt pyinstaller
+      - run: python -m PyInstaller ClanOrganizer.spec --noconfirm
+      - run: choco install innosetup -y --no-progress
+      - run: '& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" ClanOrganizer.iss'
+      - uses: actions/upload-artifact@v4
+        with: { name: ClanOrganizer-Setup, path: installer/ClanOrganizer-Setup.exe }
