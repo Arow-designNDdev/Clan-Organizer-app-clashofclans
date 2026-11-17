@@ -1,5 +1,37 @@
 # Clan Organizer
 
+**A Clash of Clans clan analytics and CWL roster planner that records clan history the game API doesn't provide, then scores members and builds rosters from it.**
+
+⬇️ **Download:** [Windows installer](PASTE RELEASE LINK) · Python source below
+
+<img width="1365" height="673" alt="image" src="https://github.com/user-attachments/assets/16cd96a8-0df5-4953-a81e-bf1a20b025e5" />
+<img width="1365" height="672" alt="image" src="https://github.com/user-attachments/assets/0f594770-dfd1-488f-b215-27be31b2f05f" />
+
+
+
+## What it does
+The game API only shows today's snapshot: no history, no "last seen". Clan Organizer syncs in the background, stores snapshots in SQLite, and uses the changes over time to measure activity, war impact and loyalty. Leaders use those scores to plan a CWL roster.
+
+## What's interesting
+- **Snapshot engine:** an hourly scheduler stores per-clan SQLite history, with lighter 10-minute syncs while a war is live.
+- **Four scores (0–100):** Activity, Impact, Prestige and a blended Total Value, all ranked within the clan. The formulas are documented on the Home page.
+- **Transfers handled fairly:** war history and activity carry over when a player moves between tracked clans, and days-in-clan never go down.
+- **CWL opponent analysis:** a per-player threat score from the enemy's earlier rounds, plus an army-code scanner from ranked battle logs.
+- **Roster builder:** drag-and-drop, 15v15 / 30v30, exports as an image.
+- **Leaderboards:** donations, raids, capital gold, upgrades, 3-stars and more, each exportable as an image.
+- **Ships as a real app:** one-click launcher, Windows installer (PyInstaller + Inno Setup), Cloudflare-tunnel sharing, plus a Docker + Caddy deploy.
+
+## Stack
+Python · Flask · SQLite · Waitress · vanilla JS/CSS · Docker · GitHub Actions
+
+![Members](docs/members.png) ![CWL analysis](docs/cwl.png)
+
+*Fan-made tool. Not affiliated with Supercell. Clash of Clans and its artwork belong to Supercell. Join history provided by [ClashKing](https://clashk.ing).*
+
+---
+
+
+
 ## Make a real installable app (Setup.exe with Uninstall)
 1. On a Windows PC, install Python and the free Inno Setup (jrsoftware.org/isdl.php).
 2. Double-click **build_installer.bat**. It makes `installer\ClanOrganizer-Setup.exe`.
