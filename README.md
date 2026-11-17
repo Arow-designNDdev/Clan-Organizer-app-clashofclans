@@ -2,7 +2,7 @@
 
 **A Clash of Clans clan analytics and CWL roster planner that records clan history the game API doesn't provide, then scores members and builds rosters from it.**
 
-⬇️ **Download:** [Windows installer](PASTE RELEASE LINK) · Python source below
+⬇️ **Download:** [Windows installer]https://github.com/Arow-designNDdev/Clan-Organizer-app-clashofclans/releases/latest · Python source below
 
 <img width="1365" height="673" alt="image" src="https://github.com/user-attachments/assets/16cd96a8-0df5-4953-a81e-bf1a20b025e5" />
 <img width="1365" height="672" alt="image" src="https://github.com/user-attachments/assets/0f594770-dfd1-488f-b215-27be31b2f05f" />
